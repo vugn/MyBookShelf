@@ -10,7 +10,7 @@ interface ButtonProps {
   className?: string | string[];
   isPrimary?: boolean;
   isDisabled?: boolean;
-  isLoading?: boolean;
+  isLoading?: "true" | "false";
   isSmall?: boolean;
   isLight?: boolean;
   isLarge?: boolean;
@@ -39,12 +39,12 @@ export default function Button(props: ButtonProps): JSX.Element {
     if (props.onClick) props.onClick();
   };
 
-  if (props.isDisabled || props.isLoading) {
+  if (props.isDisabled || props.isLoading == "true") {
     if (props.isDisabled) className.push("disabled");
 
     return (
       <span className={className.join(" ")} style={props.style}>
-        {props.isLoading ? (
+        {props.isLoading === "true" ? (
           <>
             <div className="spinner-border" role="status">
               <span className="visually-hidden">Loading...</span>
