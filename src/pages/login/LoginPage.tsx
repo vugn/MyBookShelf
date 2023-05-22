@@ -3,15 +3,19 @@ import { Component } from "react";
 import "../../assets/scss/login.scss";
 import MyBookShelfLogo from "../../assets/images/MyBookShelfLogo.png";
 import PasswordEyeIcon from "../../assets/images/icons/ic_eyeoff.svg";
-import Button from "../../elements/button";
-import axios from "axios";
+import Button from "../../elements/Button";
+import { setToken } from '../../configs/token'
+
+import login from '../../configs/axios/auth/login'
 
 interface LoginPageState {
     isChecked: boolean;
     username: string;
     password: string;
     isButtonClick: boolean;
+    isPasswordShowed: boolean;
 }
+
 
 class LoginPage extends Component<LoginPageState, LoginPageState> {
     constructor(props: LoginPageState) {
@@ -20,12 +24,16 @@ class LoginPage extends Component<LoginPageState, LoginPageState> {
             isChecked: false,
             username: '',
             password: '',
-            isButtonClick: false
+            isButtonClick: false,
+            isPasswordShowed: false
         };
     }
 
     handleCheckboxChange = () => {
         this.setState({ isChecked: !this.state.isChecked });
+    };
+    handlePasswordShowChange = () => {
+        this.setState({ isPasswordShowed: !this.state.isPasswordShowed });
     };
 
     handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,23 +45,24 @@ class LoginPage extends Component<LoginPageState, LoginPageState> {
         const { username, password, isButtonClick } = this.state;
         this.setState({ isButtonClick: true })
         if (isButtonClick == false) {
-            axios
-                .post("https://dummyjson.com/auth/login", { username, password })
-                .then((response: unknown) => {
-                    console.log(response)
-                    console.log("Login success");
-                    this.setState({ isButtonClick: false })
-                })
-                .catch((error: unknown) => {
-                    console.log(error)
-                    console.error("Login failed");
-                    this.setState({ isButtonClick: false })
-                });
+            login.getData(username, password).then((response) => {
+                const { token, ...userData } = response.data
+                setToken(
+                    token,
+                    1209600,
+                    userData,
+                )
+                this.setState({ isButtonClick: false })
+            }).catch((error: unknown) => {
+                console.log(error)
+                console.error('Login Failed')
+                this.setState({ isButtonClick: false })
+            })
         }
     };
 
     render() {
-        const { isChecked, username, password, isButtonClick } = this.state;
+        const { isChecked, username, password, isButtonClick, isPasswordShowed } = this.state;
 
         return (
             <>
@@ -70,11 +79,11 @@ class LoginPage extends Component<LoginPageState, LoginPageState> {
 
                     <div className="auth-container">
                         <p className="email" >Email</p>
-                        <input type="text" name="username" id="" value={username} onChange={this.handleInputChange} />
+                        <input type="text" name="username" id="username" value={username} onChange={this.handleInputChange} />
                         <div className="password-container">
                             <p className="password">Password</p>
-                            <input type="password" name="password" id="" value={password} onChange={this.handleInputChange} />
-                            <img src={PasswordEyeIcon} alt="" srcSet="" />
+                            <input type={isPasswordShowed ? "text" : "password"} name="password" id="password" value={password} onChange={this.handleInputChange} />
+                            <img onClick={this.handlePasswordShowChange} src={PasswordEyeIcon} alt="" srcSet="" />
                         </div>
                     </div>
 
