@@ -1,11 +1,17 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate, BrowserRouter, } from "react-router-dom";
 import './assets/scss/style.scss'
 import OrangeVector from "./assets/images/vectors/OrangeVector.svg";
-import OrangeVectorGlow from "./assets/images/vectors/OrangeVectorGlow.svg";
 import HomePage from "./pages/home/HomePage";
 import LoginPage from "./pages/login/LoginPage";
+import { getToken } from "./configs/token";
+
+const isAuthenticated = () => {
+  const token = getToken()?.token;
+  return token !== undefined;
+}
 
 function App() {
+
   return (
    <div className="app" style={{ 
     backgroundImage: `url(${OrangeVector})`,
@@ -18,8 +24,8 @@ function App() {
    }}>
       <Router>
         <Routes>
-          <Route path="/login" element={<HomePage/>} />
-          <Route path="/" element={<LoginPage isChecked={false}/>} />
+          <Route path="/dashboard" element={<HomePage/>} />
+          <Route path="/login" element={<LoginPage/> } />
         </Routes>
       </Router>
    </div>
