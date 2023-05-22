@@ -3,6 +3,7 @@ import { Component } from "react";
 import "../../assets/scss/login.scss";
 import MyBookShelfLogo from "../../assets/images/MyBookShelfLogo.png";
 import PasswordEyeIcon from "../../assets/images/icons/ic_eyeoff.svg";
+import Button from "../../components/button";
 
 interface CheckboxComponentState {
     isChecked: boolean;
@@ -62,8 +63,11 @@ class LoginPage extends Component<CheckboxComponentState, CheckboxComponentState
                         </div>
 
                         <div className="login-btn-container">
-                            <button className="btn btn-primary">Login</button>
+                        <Button className="btn" isBlock isPrimary isGlowHover isLarge>
+                            Login
+                        </Button>
                         </div>
+                        
 
                         <div className="register-container">
                             <p>New User? <span>Register here</span></p>
