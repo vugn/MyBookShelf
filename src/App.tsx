@@ -3,31 +3,25 @@ import './assets/scss/style.scss'
 import OrangeVector from "./assets/images/vectors/OrangeVector.svg";
 import OrangeVectorGlow from "./assets/images/vectors/OrangeVectorGlow.svg";
 import HomePage from "./pages/home/HomePage";
+import LoginPage from "./pages/login/LoginPage";
 
 function App() {
   return (
    <div className="app" style={{ 
     backgroundImage: `url(${OrangeVector})`,
-    width: '100vw',
-    height: '100vh',
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-   }}>
-    <div className="glow-bg" style={{ 
-    backgroundImage: `url(${OrangeVectorGlow})`,
-    width: '100vw',
-    height: '100vh',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
+    top: 0,
+    minWidth: '100%',
+    minHeight: '100%',
+    position: 'absolute',
    }}>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage/>} />
+          <Route path="/login" element={<HomePage/>} />
+          <Route path="/" element={<LoginPage isChecked={false}/>} />
         </Routes>
       </Router>
-      </div>
    </div>
   )
 }

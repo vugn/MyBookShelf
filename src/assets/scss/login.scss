@@ -1,0 +1,217 @@
+@import "./style.scss";
+
+.form-container {
+  padding: 0 73px;
+  text-align: center;
+  margin: 82px auto 82px auto;
+  display: block;
+  max-width: 560px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+
+  h2 {
+    margin-top: 62px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: $base-color;
+  }
+
+  h3 {
+    margin-top: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 128.52%;
+    color: #ababab;
+  }
+
+  .auth-container {
+    p {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $base-color;
+      text-align: left;
+    }
+
+    input {
+      box-sizing: border-box;
+      margin-top: 8px;
+      text-align: left;
+      width: 100%;
+      height: 56px;
+      background: #ffffff;
+      border: 1px solid #dcd9d9;
+      border-radius: 8px;
+      transition: 0.5s;
+      outline: none;
+      padding: 16px;
+      color: $base-color;
+    }
+
+    input[type="email"] {
+      font-size: 16px;
+    }
+
+    .password-container {
+      input[type="password"] {
+        font-size: 32px;
+        padding-right: 40px;
+      }
+
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 2.5em;
+        right: 2em;
+      }
+
+      img:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .email {
+    margin-top: 42px;
+  }
+
+  .password {
+    margin-top: 24px;
+  }
+
+  .form-logo {
+    padding-top: 63px;
+  }
+
+  .form-accesibility {
+    margin-top: 50px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+
+    .rememberme-container {
+      text-align: left;
+
+      label {
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+        box-sizing: content-box;
+        width: 14px;
+        height: 14px;
+        margin: 0 5px 0 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 2px;
+        background-color: #fff;
+        border: 1px solid #b7b7b7;
+      }
+
+      input[type="checkbox"]:checked {
+        background-color: #df7d3a;
+      }
+
+      input[type="checkbox"]:before {
+        content: "";
+        display: block;
+        transition: transform 200ms;
+      }
+
+      input[type="checkbox"]:checked:before {
+        width: 4px;
+        height: 9px;
+        margin: 0px 4px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+        transform: rotate(45deg);
+      }
+    }
+
+    .forgot-btn {
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: $base-color;
+      display: inline-block;
+      padding-bottom: 2px;
+      background-image: linear-gradient($base-color 0 0);
+      background-position: right bottom; /* OR left bottom*/
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      transition: background-size 0.5s;
+    }
+
+    .forgot-btn:hover {
+      background-size: 0% 1px;
+    }
+  }
+
+  .login-btn-container {
+    margin-top: 42px;
+
+    .btn {
+      display: block;
+      width: 100%;
+      height: 48px;
+      color: white;
+      background-color: $primary-color;
+      outline: none;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 5px 15px $primary-color;
+    }
+  }
+
+  .register-container {
+    margin-top: 63px;
+    padding-bottom: 169px;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+
+    span {
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: $base-color;
+      display: inline-block;
+      padding-bottom: 2px;
+      background-image: linear-gradient($base-color 0 0);
+      background-position: right bottom; /* OR left bottom*/
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      transition: background-size 0.5s;
+    }
+
+    span:hover {
+      background-size: 0% 1px;
+    }
+
+    .guest-btn {
+        cursor: pointer;
+    }
+  }
+}
