@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { isAuthenticated } from "../../configs/token";
+import { getUserData, isAuthenticated } from "../../configs/token";
 import { useNavigate } from "react-router-dom";
 import '../../assets/scss/myshelf.scss'
 import getBookData from '../../configs/axios/data/book_data'
@@ -39,7 +39,7 @@ const HomePage = () => {
         <div className="d-flex flex-column flex-grow-1 p-5 bg-secondary-color rounded-4 main-area-container" style={{ width: "306px", }}>
           <div className="d-flex flex-row justify-content-between">
             <Search />
-            <AccountSummary />
+            <AccountSummary {...getUserData()?.user} />
           </div>
           <h2 className="mt-5 fs-1">Your <span className="shelf-color">Shelf</span></h2>
           <CategoryNav />
