@@ -14,6 +14,7 @@ import ShareIcon from "../../assets/images/icons/ic_share.svg";
 import Button from "../../elements/Button";
 import { BookModel } from "../../models/BookModel";
 import getDetailBookData from '../../configs/axios/data/detail_book_data'
+import DetailStatus from "../../parts/DetailStatus";
 
 const DetailPage = () => {
     const [detailBookData, setDetailBookData] = useState<BookModel>()
@@ -103,24 +104,7 @@ const DetailPage = () => {
                         </div>
                         <div className="me-5"></div>
                         {/* Detail Section */}
-                        <div className="detail-container d-flex flex-column">
-                            <h1 className="fs-2">{detailBookData?.Title}</h1>
-                            <h2 className="mt-3">By <a className="link-underline-dark link-dark">{detailBookData?.author}</a>, {new Date(detailBookData.published).getFullYear().toString()}</h2>
-                            <span className="mt-4" style={{
-                                color: '#9A9A9A'
-                            }}>Second Edition</span>
-
-                            {/* Status Seciont */}
-                            <div className="book-status-container d-flex d-row align-items-center mt-4">
-                                <div className="star-ratings" >
-                                    <div className="star-ratings-top" style={{ width: `${detailBookData?.rating}%` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                    <div className="star-ratings-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                                </div>
-                                <p className="ms-2" style={{ fontWeight: '500', fontSize: '14' }}><span>{detailBookData?.rating}</span> Ratings</p>
-                                <p className="ms-3" style={{ fontWeight: '500', fontSize: '14' }}><span>25</span> Currently Reading</p>
-                                <p className="ms-3" style={{ fontWeight: '500', fontSize: '14' }}><span>119</span> Have Read</p>
-                            </div>
-                            {/* End Status Section */}
+                            {DetailStatus(detailBookData!)}
 
                             {/* Button Section */}
                             <div className="button-container mt-5 d-flex align-items-center justify-content-between" style={{ 
@@ -167,7 +151,6 @@ const DetailPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     );
 };
