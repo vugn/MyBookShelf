@@ -38,7 +38,7 @@ const LoginPage: React.FC = () => {
   const handleLogin = () => {
     setIsButtonClick(true);
     if (!isButtonClick) {
-      login.getData(username, password)
+      login.login(username, password)
         .then((response) => {
           const { token, ...userData } = response.data;
           setToken(token, 1209600, userData);

@@ -20,8 +20,25 @@
     color: $base-color;
 }
 
-@media only screen and (max-width: 1332px) {
+.card {
+    max-width: 308px !important;
+}
+
+
+.card img {
+    max-width: 123px;
+    width: auto;
+    min-height: 170px ;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 1442px) {
     .category-link {
-        font-size: 16px !important;
+        font-size: 15px !important;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .category-link {
+        font-size: 12px !important;
     }
 }
