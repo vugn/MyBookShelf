@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "../../assets/scss/homestyle.scss";
 import Button from "../../elements/Button";
-import { getToken } from "../../configs/token";
+import { getToken, isAuthenticated } from "../../configs/token";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
@@ -11,11 +11,6 @@ const HomePage = () => {
     localStorage.removeItem("token");
     console.log(getToken());
   };
-
-  const isAuthenticated = () => {
-    const token = getToken()?.token;
-    return token !== undefined;
-  }
 
   useEffect(() => {
     if(!isAuthenticated()) {

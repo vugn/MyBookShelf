@@ -50,4 +50,9 @@ export function setToken(token: string, expirySeconds: number, user: unknown) {
   
     return null;
   }
+
+ export const isAuthenticated = () => {
+    const token = getToken()?.token;
+    return token !== undefined;
+  }
   
