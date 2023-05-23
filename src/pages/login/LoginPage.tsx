@@ -62,9 +62,10 @@ const LoginPage: React.FC = () => {
 
   return (
     <>
+    {/* Build with 90% SCSS */}
       <div className="form-container">
+        <div className="gap"/>
         <img
-          className="form-logo"
           src={MyBookShelfLogo}
           alt=""
           srcSet=""
