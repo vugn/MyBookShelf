@@ -15,10 +15,6 @@ const HomePage = () => {
   const [booksData, setBooksData] = useState<BookModel[]>([])
   const navigate = useNavigate();
 
-  const handleRemoveUser = () => {
-    localStorage.removeItem("token");
-  };
-
   const fetchData = async () => {
     getBookData.getBooksData().then((res) => {
       setBooksData(res.data)
