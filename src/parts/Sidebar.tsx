@@ -16,7 +16,8 @@ export default function Sidebar() {
       />
     </a>
     <div style={{ marginTop: "100px" }} />
-    <ul className="nav nav-pills flex-column ">
+    <div className="flex-grow-1">
+    <ul className="nav nav-pills flex-column0 ">
       <li className="nav-item">
         <a href="#" className="nav-link link-dark " aria-current="page">
           <img className="me-3" src={HomeIcon} alt="" srcSet="" />
@@ -42,8 +43,8 @@ export default function Sidebar() {
         </a>
       </li>
     </ul>
-    <div style={{ marginTop: "442px" }} />
-    <ul className="nav nav-pills flex-column ">
+    </div>
+    <ul className="nav nav-pills flex-column">
       <li>
         <a href="#" className="nav-link link-dark mt-2">
           About
