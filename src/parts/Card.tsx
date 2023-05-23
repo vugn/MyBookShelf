@@ -45,7 +45,7 @@ export default function Card(props: BookModel) {
         <div className="d-flex flex-column">
           <Button className="btn mt-4" isEbook>E-Book</Button>
           <div className="btn-group">
-            <Button className="btn mt-3 pe-4 px-4" isOutlined href={"/myshelf/" + props.id} type="link" isExternal>Read</Button>
+            <Button className="btn mt-3 pe-4 px-4" isOutlined href={"/myshelf/" + props.id} type="link">Read</Button>
             <Button className="btn mt-3" isOutlined>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_72_2643)">
