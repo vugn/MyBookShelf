@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { getUserData, isAuthenticated } from "../../configs/token";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import '../../assets/scss/detail.scss'
 import Sidebar from "../../parts/Sidebar";
 import Search from "../../parts/Search";
@@ -14,6 +14,7 @@ import Button from "../../elements/Button";
 
 const DetailPage = () => {
     const navigate = useNavigate();
+    const params = useParams();
 
     useEffect(() => {
         if (!isAuthenticated()) {
