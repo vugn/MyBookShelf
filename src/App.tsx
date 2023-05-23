@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import './assets/scss/style.scss'
 import OrangeVector from "./assets/images/vectors/OrangeVector.svg";
-import HomePage from "./pages/home/HomePage";
+import MyShelfPage from "./pages/home/MyShelfPage";
 import LoginPage from "./pages/login/LoginPage";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
    }}>
       <Router>
         <Routes>
-          <Route path="/myshelf" element={<HomePage/>} />
+          <Route path="/myshelf" element={<MyShelfPage/>} />
           <Route path="/login" element={<LoginPage/> } />
           <Route path="/" element={<LoginPage/> } />
         </Routes>

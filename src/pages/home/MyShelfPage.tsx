@@ -11,7 +11,7 @@ import Search from "../../parts/Search";
 import AccountSummary from "../../parts/AccountSummary";
 import CategoryNav from "../../parts/CategoryNav";
 
-const HomePage = () => {
+const MyShelfPage = () => {
   const [booksData, setBooksData] = useState<BookModel[]>([])
   const navigate = useNavigate();
 
@@ -57,4 +57,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default MyShelfPage;
