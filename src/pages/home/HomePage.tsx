@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { getUserData, isAuthenticated } from "../../configs/token";
+import { isAuthenticated } from "../../configs/token";
 import { useNavigate } from "react-router-dom";
 import '../../assets/scss/dashboard.scss'
 import getBookData from '../../configs/axios/data/book_data'
