@@ -5,7 +5,7 @@ export default function Card(props: BookModel) {
     return <div className="book col row mt-3 me-3">
     <div className="card flex-row justify-content-between mb-3 pt-3 pb-3 border-0" >
       <div className="card-header p-0 border-0 bg-white">
-      <img className="" src={props.image} alt="" />
+      <img className="rounded-1" src={props.image} alt="" />
         <div className="card-footer bg-white border-0 p-0" style={{
           fontSize: '12px',
           width: '123px'
@@ -20,11 +20,11 @@ export default function Card(props: BookModel) {
         </div>
       </div>
       <div className="card-block px-2 bg-white">
-        <h4 className="card-title base-color" style={{
+        <h4 className="card-title" style={{
           fontSize: "15px",
           fontWeight: "400"
         }}>Borrowed on</h4>
-        <h6 className="card-subtitle base-color mt-3" style={{
+        <h6 className="card-subtitle mt-3" style={{
           fontSize: "10px",
           fontWeight: "400"
         }}>
@@ -34,7 +34,7 @@ export default function Card(props: BookModel) {
           fontSize: "15px",
           fontWeight: "400"
         }}>Submission Due</p>
-        <p className="card-text base-color mt-3" style={{
+        <p className="card-text mt-3" style={{
           fontSize: "10px",
           fontWeight: "400"
         }}>

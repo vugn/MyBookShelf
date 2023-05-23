@@ -11,6 +11,9 @@ $primary-color: #FA7C54;
 .btn-ebook {
     @include button-variant(#42BB4E, darken(#42BB4E, 7.5%), white, lighten(#42BB4E,5%), lighten(#42BB4E, 10%), white, );
 }
+.btn-orange {
+    @include button-variant(#F27851, darken(#F27851, 7.5%), white, lighten(#F27851,5%), lighten(#F27851, 10%), white, );
+}
 
 .btn-secondary {
     @include button-variant($base-color, darken($base-color, 7.5%), white, lighten($base-color,5%), lighten($base-color, 10%), white);
@@ -25,7 +28,7 @@ $primary-color: #FA7C54;
   font-family: Inter, sans-serif;
 }
 
-.base-color {
+body {
 	color: $base-color !important;
 }
 
