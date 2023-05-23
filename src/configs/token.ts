@@ -31,7 +31,7 @@ export function setToken(token: string, expirySeconds: number, user: unknown) {
     const tokenDataString = localStorage.getItem('token');
     if (tokenDataString) {
       const tokenData = JSON.parse(tokenDataString);
-      const { token, expiryDate, user } = tokenData;
+      const { token, expiryDate, } = tokenData;
   
       const currentDate = new Date().getTime();
       if (currentDate > expiryDate) {
@@ -41,9 +41,22 @@ export function setToken(token: string, expirySeconds: number, user: unknown) {
   
       const decryptedToken = decryptToken(token);
       const userData = {
-        token: decryptedToken,
         expiryDate: expiryDate,
-        user: user
+        token: decryptedToken,
+      }
+      return userData;
+    }
+  
+    return null;
+  }
+
+  export function getUserData() {
+    const tokenDataString = localStorage.getItem('token');
+    if (tokenDataString) {
+      const tokenData = JSON.parse(tokenDataString);
+      const { user } = tokenData;
+      const userData = {
+        user: user,
       }
       return userData;
     }

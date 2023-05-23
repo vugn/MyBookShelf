@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../assets/scss/homestyle.scss";
+import "../../assets/scss/dashboard.scss";
 import "../../assets/scss/login.scss";
 import MyBookShelfLogo from "../../assets/images/MyBookShelfLogo.png";
 import PasswordEyeIcon from "../../assets/images/icons/ic_eyeoff.svg";
