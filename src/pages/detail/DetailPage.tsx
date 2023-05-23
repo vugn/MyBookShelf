@@ -109,7 +109,7 @@ const DetailPage = () => {
 
                             {/* Detail Section */}
                             <div className="detail-container  d-flex flex-column">
-                                {DetailStatus(detailBookData!)}
+                                <DetailStatus {...detailBookData!}/>
 
                                 {/* Button Section */}
                                 <div className="button-container mt-5 d-flex align-items-center justify-content-between" style={{
@@ -129,7 +129,7 @@ const DetailPage = () => {
                                 {/* End Desc Section */}
 
                                 {/* Book Information Section */}
-                                {DetailInformation()}
+                                <DetailInformation/>
                                 {/* End Book Information Section */}
                             </div>
                         </div> : <div />

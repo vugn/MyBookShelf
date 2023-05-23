@@ -33,17 +33,20 @@ const MyShelfPage = () => {
 
   return (
     <>
+    {/* Frame */}
       <div className="dashboard-container d-flex rounded-4  bg-light">
         <Sidebar />
 
         <div className="d-flex flex-column flex-grow-1 p-5 bg-secondary-color rounded-4 main-area-container" style={{ width: "306px", }}>
           <div className="d-flex flex-row justify-content-between">
             <Search />
+            {/* Account Summary */}
             <AccountSummary {...getUserData()?.user} />
           </div>
           <h2 className="mt-5 fs-1">Your <span className="shelf-color">Shelf</span></h2>
           <CategoryNav />
           <div className="mt-2 row row-cols-xxl-4">
+            {/* Cards */}
             {
               booksData.map((book) => {
                 return Card(book)
