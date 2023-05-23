@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { getUserData, isAuthenticated } from "../../configs/token";
@@ -40,7 +41,7 @@ const MyShelfPage = () => {
           <div className="d-flex flex-row justify-content-between">
             <Search />
             {/* Account Summary */}
-            <AccountSummary {...getUserData()?.user} />
+            <AccountSummary {...getUserData()?.user}  />
           </div>
           <h2 className="mt-5 fs-1">Your <span className="shelf-color">Shelf</span></h2>
           <CategoryNav />

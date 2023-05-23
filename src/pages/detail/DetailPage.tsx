@@ -40,6 +40,7 @@ const DetailPage = () => {
     useEffect(() => {
         handleUndefinedParam()
         fetchData()
+        console.log(getUserData())
         if (!isAuthenticated()) {
             navigate('/login', { replace: true })
         }
@@ -58,7 +59,7 @@ const DetailPage = () => {
                     </div>
 
                     <div className="mt-4 d-flex align-items-center" >
-                        <Button className="btn p-0" type="link" href="/">
+                        <Button className="btn p-0" type="link" href="/myshelf">
                             <div className="d-flex flex-row align-items-center">
                                 <img src={Arrow} alt="" />
                                 <p className="ms-2 flex-shrink-1">Back to results</p>
