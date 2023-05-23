@@ -3,7 +3,7 @@ import "../../assets/scss/myshelf.scss";
 import "../../assets/scss/login.scss";
 import MyBookShelfLogo from "../../assets/images/MyBookShelfLogo.png";
 import PasswordEyeIcon from "../../assets/images/icons/ic_eyeoff.svg";
-import Button from "../../elements/Button";
+import Button from "../../elements/button";
 import {  isAuthenticated, setToken } from "../../configs/token";
 import { useNavigate } from "react-router-dom";
 import login from "../../configs/axios/auth/login";

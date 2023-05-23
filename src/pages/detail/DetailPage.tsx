@@ -11,7 +11,7 @@ import Arrow from "../../assets/images/icons/ic_back.svg";
 import ReviewIcon from "../../assets/images/icons/ic_review.svg";
 import NotesIcon from "../../assets/images/icons/ic_notes.svg";
 import ShareIcon from "../../assets/images/icons/ic_share.svg";
-import Button from "../../elements/Button";
+import Button from "../../elements/button";
 import { BookModel } from "../../models/BookModel";
 import getDetailBookData from '../../configs/axios/data/detail_book_data'
 import DetailStatus from "../../parts/DetailStatus";

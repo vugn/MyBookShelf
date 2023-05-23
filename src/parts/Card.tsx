@@ -1,4 +1,4 @@
-import Button from "../elements/Button";
+import Button from "../elements/button";
 import { BookModel } from "../models/BookModel";
 
 export default function Card(props: BookModel) {

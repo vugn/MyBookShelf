@@ -1,4 +1,4 @@
-import Button from "../elements/Button";
+import Button from "../elements/button";
 import { UserModel } from "../models/UserModel";
 
 export default function AccountSummary(props: UserModel) {
