@@ -8,6 +8,7 @@ import { BookModel } from "../../models/BookModel";
 import Card from "../../parts/Card";
 import Sidebar from "../../parts/Sidebar";
 import Search from "../../parts/Search";
+import AccountSummary from "../../parts/AccountSummary";
 
 const HomePage = () => {
   const [booksData, setBooksData] = useState<BookModel[]>([])
@@ -41,22 +42,7 @@ const HomePage = () => {
         <div className="d-flex flex-column flex-grow-1 p-5 bg-secondary-color rounded-4 main-area-container" style={{ width: "306px", }}>
           <div className="d-flex flex-row justify-content-between">
            <Search/>
-
-            <div className="bg-white rounded-pill shadow-sm btn-group" style={{ height: "41px" }}>
-              <button style={{ height: "41px" }} className="pe-4 d-flex align-items-center btn btn-outline-secondary rounded-pill border border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src={getUserData()?.user['image']} style={{
-                  width: "32px",
-                  borderRadius: "100%"
-                }} alt="" srcSet="" />
-                <p className="pe-3 ps-3 mb-0">{getUserData()?.user['firstName']} {getUserData()?.user['lastName']}</p>
-              </button>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Profile</a></li>
-                <li><a className="dropdown-item" href="#">Invite Friends</a></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="#">Log Out</a></li>
-              </ul>
-            </div>
+            <AccountSummary/>
           </div>
           <h2 className="mt-5 fs-1">Your <span className="shelf-color">Shelf</span></h2>
           <ul className="d-flex flex-row align-items-center ps-0 mt-5">
