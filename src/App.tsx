@@ -3,6 +3,7 @@ import './assets/scss/style.scss'
 import OrangeVector from "./assets/images/vectors/OrangeVector.svg";
 import MyShelfPage from "./pages/home/MyShelfPage";
 import LoginPage from "./pages/login/LoginPage";
+import DetailPage from "./pages/detail/DetailPage";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/myshelf" element={<MyShelfPage/>} />
+          <Route path="/myshelf/:id" element={<DetailPage/>} />
           <Route path="/login" element={<LoginPage/> } />
           <Route path="/" element={<LoginPage/> } />
         </Routes>
