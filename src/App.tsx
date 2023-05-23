@@ -18,7 +18,7 @@ function App() {
    }}>
       <Router>
         <Routes>
-          <Route path="/dashboard" element={<HomePage/>} />
+          <Route path="/myshelf" element={<HomePage/>} />
           <Route path="/login" element={<LoginPage/> } />
           <Route path="/" element={<LoginPage/> } />
         </Routes>

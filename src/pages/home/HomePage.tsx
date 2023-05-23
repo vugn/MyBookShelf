@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { isAuthenticated } from "../../configs/token";
 import { useNavigate } from "react-router-dom";
-import '../../assets/scss/dashboard.scss'
+import '../../assets/scss/myshelf.scss'
 import getBookData from '../../configs/axios/data/book_data'
 import { BookModel } from "../../models/BookModel";
 import Card from "../../parts/Card";
