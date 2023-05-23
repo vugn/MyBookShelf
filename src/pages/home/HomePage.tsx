@@ -1,17 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import Button from "../../elements/Button";
-import { getToken, getUserData, isAuthenticated } from "../../configs/token";
-import MyBookShelfLogo from "../../assets/images/MyBookShelfLogo.png";
-import HomeIcon from '../../assets/images/icons/ic_home.svg'
-import SearchIcon from '../../assets/images/icons/ic_search.svg'
-import MyShelfIcon from '../../assets/images/icons/ic_bookshelf.svg'
-import ContributeIcon from '../../assets/images/icons/ic_give.svg'
+import {  getUserData, isAuthenticated } from "../../configs/token";
 import { useNavigate } from "react-router-dom";
 import '../../assets/scss/dashboard.scss'
 import getBookData from '../../configs/axios/data/book_data'
 import { BookModel } from "../../models/BookModel";
 import Card from "../../parts/Card";
+import Sidebar from "../../parts/Sidebar";
 
 const HomePage = () => {
   const [booksData, setBooksData] = useState<BookModel[]>([])
@@ -40,62 +35,7 @@ const HomePage = () => {
   return (
     <>
       <div className="dashboard-container d-flex rounded-4  bg-light">
-        <div className="d-flex flex-column flex-shrink-0 p-5" style={{ width: "306px", }}>
-          <a href="/" className="d-flex align-items-center justify-content-center link-dark text-decoration-none">
-            <img
-              className="form-logo"
-              src={MyBookShelfLogo}
-              alt=""
-              srcSet=""
-              width={150}
-            />
-          </a>
-          <div style={{ marginTop: "100px" }} />
-          <ul className="nav nav-pills flex-column ">
-            <li className="nav-item">
-              <a href="#" className="nav-link link-dark " aria-current="page">
-                <img className="me-3" src={HomeIcon} alt="" srcSet="" />
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link link-dark mt-4">
-                <img className="me-3" src={SearchIcon} alt="" srcSet="" />
-                Search
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link link-active mt-4">
-                <img className="me-3" src={MyShelfIcon} alt="" srcSet="" />
-                My Shelf
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link link-dark mt-4">
-                <img className="me-3" src={ContributeIcon} alt="" srcSet="" />
-                Contribure
-              </a>
-            </li>
-          </ul>
-          <div style={{ marginTop: "442px" }} />
-          <ul className="nav nav-pills flex-column ">
-            <li>
-              <a href="#" className="nav-link link-dark mt-2">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link link-dark mt-2">
-                Support
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link link-dark mt-2">
-                Terms & Condition
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Sidebar/>
 
         <div className="d-flex flex-column flex-grow-1 p-5 bg-secondary-color rounded-4 main-area-container" style={{ width: "306px", }}>
           <div className="d-flex flex-row justify-content-between">
