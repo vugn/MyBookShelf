@@ -1,14 +1,8 @@
-import { BrowserRouter as Router, Route, Routes, Navigate, BrowserRouter, } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import './assets/scss/style.scss'
 import OrangeVector from "./assets/images/vectors/OrangeVector.svg";
 import HomePage from "./pages/home/HomePage";
 import LoginPage from "./pages/login/LoginPage";
-import { getToken } from "./configs/token";
-
-const isAuthenticated = () => {
-  const token = getToken()?.token;
-  return token !== undefined;
-}
 
 function App() {
 
@@ -26,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<HomePage/>} />
           <Route path="/login" element={<LoginPage/> } />
+          <Route path="/" element={<LoginPage/> } />
         </Routes>
       </Router>
    </div>

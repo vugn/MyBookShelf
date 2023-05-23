@@ -55,9 +55,10 @@ const LoginPage: React.FC = () => {
 
 
   useEffect(() => {
-    if(logged) {
-        navigate('/dashboard', {replace: true})
-    } 
+    if(getToken() !== null) {
+      
+      navigate('/dashboard', {replace: true})
+    }
   },[logged, navigate])
 
   return (

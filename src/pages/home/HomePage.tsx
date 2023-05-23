@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "../../assets/scss/homestyle.scss";
 import Button from "../../elements/Button";
 import { getToken } from "../../configs/token";
