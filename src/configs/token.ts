@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {AES, enc} from "crypto-js";
 
 // Fungsi enkripsi token
 function encryptToken(token: string) {
     // Implementasikan metode enkripsi yang sesuai di sini
     // Misalnya, menggunakan library crypto-js
-    const encryptedToken = AES.encrypt(token, 'secret_key').toString();
+    const encryptedToken = AES.encrypt(token, import.meta.env.VITE_SECRET_TOKEN_KEY!).toString();
     return encryptedToken;
   }
   
@@ -12,7 +13,7 @@ function encryptToken(token: string) {
 function decryptToken(encryptedToken: string) {
     // Implementasikan metode dekripsi yang sesuai di sini
     // Misalnya, menggunakan library crypto-js
-    const decryptedBytes = AES.decrypt(encryptedToken, 'secret_key');
+    const decryptedBytes = AES.decrypt(encryptedToken, import.meta.env.VITE_SECRET_TOKEN_KEY!);
     const token = decryptedBytes.toString(enc.Utf8);
     return token;
   }

@@ -18,7 +18,6 @@ const MyShelfPage = () => {
   const fetchData = async () => {
     getBookData.getBooksData().then((res) => {
       setBooksData(res.data)
-      console.log(booksData)
     }).catch((err) => {
       console.log(err)
     })

@@ -38,6 +38,7 @@ const DetailPage = () => {
     }
 
     useEffect(() => {
+        console.log(process.env.REACT_APPP_SECRET_TOKEN_KEY!)
         handleUndefinedParam()
         fetchData()
         if (!isAuthenticated()) {
