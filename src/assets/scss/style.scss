@@ -3,8 +3,27 @@
 $base-color: #4D4D4D;
 $primary-color: #FA7C54;
 
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary {
+    @include button-variant($primary-color, darken($primary-color, 7.5%), white, lighten($primary-color,5%), lighten($primary-color, 10%), white);
+}
+
+.btn-secondary {
+    @include button-variant($base-color, darken($base-color, 7.5%), white, lighten($base-color,5%), lighten($base-color, 10%), white);
+}
+
+.btn-outline-primary {
+    @include button-outline-variant($primary-color, white, lighten($primary-color,5%), $primary-color);
+}
+
+
 :root {
   font-family: Inter, sans-serif;
+}
+
+.base-color {
+	color: $base-color !important;
 }
 
 .link-dark {
@@ -13,16 +32,15 @@ $primary-color: #FA7C54;
 
 .link-active {
 	color: $base-color !important;
+	font-weight: 600 !important;
 }
 
 .bg-secondary-color {
 	background: #F3F3F7;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,3 +85,4 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
