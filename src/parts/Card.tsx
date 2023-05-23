@@ -2,8 +2,10 @@ import Button from "../elements/Button";
 import { BookModel } from "../models/BookModel";
 
 export default function Card(props: BookModel) {
-    return <div className="book col row mt-3 me-3" key={props.id}>
-    <div className="card flex-row justify-content-between mb-3 pt-3 pb-3 border-0" >
+    return <div className="book col-auto row" key={props.id} >
+    <div className="card flex-row justify-content-between mb-3 pt-3 pb-3 border-0" style={{ 
+      width: '308px'
+     }}>
       <div className="card-header p-0 border-0 bg-white">
       <img className="rounded-1" src={props.image} alt="" />
         <div className="card-footer bg-white border-0 p-0" style={{

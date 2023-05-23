@@ -44,7 +44,7 @@ const MyShelfPage = () => {
           </div>
           <h2 className="mt-5 fs-1">Your <span className="shelf-color">Shelf</span></h2>
           <CategoryNav />
-          <div className="mt-2 row row-cols-xxl-4">
+          <div className="mt-5 row gap-5">
             {/* Cards */}
             {
               booksData.map((book) => {

@@ -6,7 +6,7 @@ export default function CategoryNav() {
             </a>
         </li>
         <li>
-            <a href="/login" className="nav-link link-dark me-5 category-link">
+            <a href="#" className="nav-link link-dark me-5 category-link">
                 Favourite
             </a>
         </li>
