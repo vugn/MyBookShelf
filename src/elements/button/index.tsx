@@ -15,6 +15,9 @@ interface ButtonProps {
   isLight?: boolean;
   isLarge?: boolean;
   isBlock?: boolean;
+  isSecondary?: boolean;
+  isEbook?: boolean;
+  isOutlined?: boolean;
   isGlowHover?: boolean;
   isExternal?: boolean;
   hasShadow?: boolean;
@@ -32,6 +35,9 @@ export default function Button(props: ButtonProps): JSX.Element {
   if (props.isLight) className.push("btn-light");
   if (props.isSmall) className.push("btn-sm");
   if (props.isBlock) className.push("btn-block");
+  if (props.isSecondary) className.push("btn-secondary");
+  if (props.isEbook) className.push("btn-ebook");
+  if (props.isOutlined) className.push("btn-outline-primary");
   if (props.isGlowHover) className.push("btn-glow");
   if (props.hasShadow) className.push("btn-shadow");
 

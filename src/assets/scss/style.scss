@@ -8,6 +8,9 @@ $primary-color: #FA7C54;
 .btn-primary {
     @include button-variant($primary-color, darken($primary-color, 7.5%), white, lighten($primary-color,5%), lighten($primary-color, 10%), white);
 }
+.btn-ebook {
+    @include button-variant(#42BB4E, darken(#42BB4E, 7.5%), white, lighten(#42BB4E,5%), lighten(#42BB4E, 10%), white, );
+}
 
 .btn-secondary {
     @include button-variant($base-color, darken($base-color, 7.5%), white, lighten($base-color,5%), lighten($base-color, 10%), white);
