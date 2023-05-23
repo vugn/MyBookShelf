@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getUserData, isAuthenticated } from "../../configs/token";
 import { useNavigate, useParams } from "react-router-dom";
 import '../../assets/scss/detail.scss'
@@ -11,12 +12,32 @@ import ReviewIcon from "../../assets/images/icons/ic_review.svg";
 import NotesIcon from "../../assets/images/icons/ic_notes.svg";
 import ShareIcon from "../../assets/images/icons/ic_share.svg";
 import Button from "../../elements/Button";
+import { BookModel } from "../../models/BookModel";
+import getDetailBookData from '../../configs/axios/data/detail_book_data'
 
 const DetailPage = () => {
+    const [detailBookData, setDetailBookData] = useState<BookModel>()
+
     const navigate = useNavigate();
     const params = useParams();
 
+    const handleUndefinedParam = () => {
+        if(isNaN(+params.id!) ) {
+            navigate('/', {replace: true})
+        }
+    }
+
+    const fetchData = async () => {
+        getDetailBookData.getDetailBookData(params.id ?? '').then((res) => {
+            setDetailBookData(res.data[0])
+        }).catch((err) => {
+          console.log(err)
+        })
+      }
+
     useEffect(() => {
+        handleUndefinedParam()
+        fetchData()
         if (!isAuthenticated()) {
             navigate('/login', { replace: true })
         }
@@ -50,7 +71,7 @@ const DetailPage = () => {
                         <div className="img-container bg-white rounded-2 p-4" style={{ 
                             height: '26em'
                          }}>
-                            <img src="https://placehold.co/209x277" alt="" />
+                            <img src={detailBookData?.image} width={209} height={277} style={{ objectFit: 'cover' }} alt="" />
                             <div className="accesibility-container d-flex flex-row justify-content-evenly align-items-center mt-4 mb-2">
                                 <div className="content d-flex flex-column align-items-center">
                                     <img src={ReviewIcon} alt="" width={32} />
@@ -83,8 +104,8 @@ const DetailPage = () => {
                         <div className="me-5"></div>
                         {/* Detail Section */}
                         <div className="detail-container d-flex flex-column">
-                            <h1 className="fs-2">Don’t Make Me Think </h1>
-                            <h2 className="mt-3">By <a className="link-underline-dark link-dark">Steven Kurg</a>, 2000</h2>
+                            <h1 className="fs-2">{detailBookData?.Title}</h1>
+                            <h2 className="mt-3">By <a className="link-underline-dark link-dark">{detailBookData?.author}</a>, {new Date(detailBookData.published).getFullYear().toString()}</h2>
                             <span className="mt-4" style={{
                                 color: '#9A9A9A'
                             }}>Second Edition</span>
@@ -92,10 +113,10 @@ const DetailPage = () => {
                             {/* Status Seciont */}
                             <div className="book-status-container d-flex d-row align-items-center mt-4">
                                 <div className="star-ratings" >
-                                    <div className="star-ratings-top" style={{ width: "50%" }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    <div className="star-ratings-top" style={{ width: `${detailBookData?.rating}%` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                     <div className="star-ratings-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                                 </div>
-                                <p className="ms-2" style={{ fontWeight: '500', fontSize: '14' }}><span>5.0</span> Ratings</p>
+                                <p className="ms-2" style={{ fontWeight: '500', fontSize: '14' }}><span>{detailBookData?.rating}</span> Ratings</p>
                                 <p className="ms-3" style={{ fontWeight: '500', fontSize: '14' }}><span>25</span> Currently Reading</p>
                                 <p className="ms-3" style={{ fontWeight: '500', fontSize: '14' }}><span>119</span> Have Read</p>
                             </div>
@@ -113,8 +134,7 @@ const DetailPage = () => {
                             {/* Desc Section */}
                             <div className="desc-container mt-5">
                                 <p className="mt-5">Previews available in: <a href="" style={{ color: '#F27851' }}>English</a></p>
-                                <p className="mt-4">
-                                Since Don’t Make Me Think was first published in 2000, hundreds of thousands of Web designers and developers have relied on usability guru Steve Krug’s guide to help them understand the principles of intuitive navigation and information design. Witty, commonsensical, and eminently practical, it’s one of the best-loved and most...  <a href="" style={{ color: '#F27851' }}>Read more</a>
+                                <p className="mt-4">{detailBookData?.description}  <a href="" style={{ color: '#F27851' }}>Read more</a>
                                 </p>
                             </div>
                             {/* End Desc Section */}
