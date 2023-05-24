@@ -17,27 +17,27 @@ export default function Sidebar() {
     </a>
     <div style={{ marginTop: "100px" }} />
     <div className="flex-grow-1">
-    <ul className="nav nav-pills flex-column0 ">
+    <ul className="nav nav-pills">
       <li className="nav-item">
-        <a href="#" className="nav-link link-dark " aria-current="page">
+        <a href="#" className="d-flex align-items-center nav-link link-dark align-items-center" aria-current="page">
           <img className="me-3" src={HomeIcon} alt="" srcSet="" />
           Home
         </a>
       </li>
       <li>
-        <a href="#" className="nav-link link-dark mt-4">
+        <a href="#" className="d-flex align-items-center nav-link link-dark mt-4">
           <img className="me-3" src={SearchIcon} alt="" srcSet="" />
           Search
         </a>
       </li>
       <li>
-        <a href="#" className="nav-link link-active mt-4">
+        <a href="#" className="d-flex align-items-center nav-link link-active mt-4">
           <img className="me-3" src={MyShelfIcon} alt="" srcSet="" />
           My Shelf
         </a>
       </li>
       <li>
-        <a href="#" className="nav-link link-dark mt-4">
+        <a href="#" className="d-flex align-items-center nav-link link-dark mt-4">
           <img className="me-3" src={ContributeIcon} alt="" srcSet="" />
           Contribure
         </a>
